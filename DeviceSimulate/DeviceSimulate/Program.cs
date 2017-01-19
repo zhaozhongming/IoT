@@ -12,15 +12,26 @@ namespace DeciveSimulate
     class Program
     {
         static DeviceClient deviceClient;
+        #region personal
         //static string iotHubUri = "IoThubZhaoz1.azure-devices.net";
         //static string deviceKey = "aGSneKO7wnGmA04KqvzSImRMSfJnLFtQ0uoJA7IWH7U=";
         //static string deviceIdDefined = "Raspberry1";
-        static string iotHubUri = "BurnerPilot.azure-devices.net";
-        //static string deviceKey = "I08yZQxiPPAe30L2mXFGxsspYxR6obMsBjmvS/uSldw=";
-        //static string deviceIdDefined = "rogue1";
+        #endregion
 
-        static string deviceKey = "XMnkymHy6LWf9PZH1yRQf8SmkEEK04tkGxNGPvVQAoQ=";
+        #region msdn
+        //static string iotHubUri = "BurnerPilot.azure-devices.net";
+        ////static string deviceKey = "I08yZQxiPPAe30L2mXFGxsspYxR6obMsBjmvS/uSldw=";
+        ////static string deviceIdDefined = "rogue1";
+
+        //static string deviceKey = "XMnkymHy6LWf9PZH1yRQf8SmkEEK04tkGxNGPvVQAoQ=";
+        //static string deviceIdDefined = "zhaoz1";
+        #endregion
+
+        #region dev
+        static string iotHubUri = "ap-Iot-APGateway-USE-Dev.azure-devices.net";
+        static string deviceKey = "X9XI62RaRjSoVghhQkRalHIqkzwoNTwLpShtWX6XFR4=";
         static string deviceIdDefined = "zhaoz1";
+        #endregion
 
 
         static ILog log = null;

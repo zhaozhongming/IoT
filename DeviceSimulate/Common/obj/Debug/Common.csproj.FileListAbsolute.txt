@@ -4,4 +4,3 @@ I:\GitHub\Repos\IoT\DeviceSimulate\Common\obj\Debug\Common.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\Common\obj\Debug\Common.pdb
 I:\GitHub\Repos\IoT\DeviceSimulate\Common\bin\Debug\Newtonsoft.Json.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\Common\bin\Debug\Newtonsoft.Json.xml
-I:\GitHub\Repos\IoT\DeviceSimulate\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
