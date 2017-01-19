@@ -14,12 +14,12 @@ tmp/
 
 # Build results
 
-**/[Dd]ebug/
-**/[Rr]elease/
-**/x64/
-**/build/
-**/[Bb]in/
-**/[Oo]bj/
+**/[Dd]ebug/*
+**/[Rr]elease/*
+**/x64/*
+**/build/*
+**/[Bb]in/*
+**/[Oo]bj/*
 
 # Ignore NuGet Packages
 *.nupkg
