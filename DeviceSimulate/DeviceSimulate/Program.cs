@@ -51,6 +51,7 @@ namespace DeciveSimulate
 
             while (true)
             {
+                if (win > 104) win = 101;
                 SendDeviceToCloudMessagesAsync(bpc, win++);
                 Task.Delay(1000).Wait();
                 
@@ -62,8 +63,6 @@ namespace DeciveSimulate
         {
             float avgWindSpeed = 10; // m/s
             Random rand = new Random();
-
-            if (win > 104) win = 101;
             float currentWindSpeed = Convert.ToSingle(avgWindSpeed + rand.NextDouble() * 4 - 2);
 
             var telemetryDataPoint = new
