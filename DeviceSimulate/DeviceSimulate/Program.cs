@@ -21,8 +21,8 @@ namespace DeciveSimulate
 
         #region msdn
         //static string iotHubUri = "BurnerPilot.azure-devices.net";
-        ////static string deviceKey = "I08yZQxiPPAe30L2mXFGxsspYxR6obMsBjmvS/uSldw=";
-        ////static string deviceIdDefined = "rogue1";
+        //static string deviceKey = "I08yZQxiPPAe30L2mXFGxsspYxR6obMsBjmvS/uSldw=";
+        //static string deviceIdDefined = "rogue1";
 
         //static string deviceKey = "XMnkymHy6LWf9PZH1yRQf8SmkEEK04tkGxNGPvVQAoQ=";
         //static string deviceIdDefined = "zhaoz1";
@@ -30,24 +30,26 @@ namespace DeciveSimulate
 
         #region dev
         static string iotHubUri = "ap-Iot-APGateway-USE-Dev.azure-devices.net";
-        //static string deviceKey = "X9XI62RaRjSoVghhQkRalHIqkzwoNTwLpShtWX6XFR4=";
-        //static string deviceIdDefined = "zhaoz1";
+        static string deviceKey = "X9XI62RaRjSoVghhQkRalHIqkzwoNTwLpShtWX6XFR4=";
+        static string deviceIdDefined = "zhaoz1";
 
-        static string deviceKey = "uZv0UuPO3N4capCOUOTfBEmULnWMK/n97I1yGXYgKeA=";
-        static string deviceIdDefined = "marvin1";
+        //static string deviceKey = "uZv0UuPO3N4capCOUOTfBEmULnWMK/n97I1yGXYgKeA=";
+        //static string deviceIdDefined = "marvin1";
         #endregion
 
+        private static int sentCount = 0;
+
         private static InputDTO[] testDataDic
-         = new InputDTO[] { new InputDTO { BpcUid = 50, WinUid = 12 }
-                            , new InputDTO { BpcUid = 50, WinUid = 55}
-                            , new InputDTO { BpcUid = 81, WinUid = 10}
-                            , new InputDTO { BpcUid = 78, WinUid = 1}
-                            , new InputDTO { BpcUid = 78, WinUid = 2}
-                            , new InputDTO { BpcUid = 63, WinUid = 2}
-                            , new InputDTO { BpcUid = 179, WinUid = 1}
-                            , new InputDTO { BpcUid = 212, WinUid = 2}
-                            , new InputDTO { BpcUid = 50, WinUid = 6}
-                            , new InputDTO { BpcUid = 50, WinUid = 9} };
+         = new InputDTO[] { new InputDTO { BpcUid = 87, WinUid = 1 }
+                            , new InputDTO { BpcUid = 87, WinUid = 2}
+                            , new InputDTO { BpcUid = 88, WinUid = 1}
+                            , new InputDTO { BpcUid = 84, WinUid = 1}
+                            , new InputDTO { BpcUid = 90, WinUid = 1}
+                            , new InputDTO { BpcUid = 90, WinUid = 2}
+                            , new InputDTO { BpcUid = 95, WinUid = 1}
+                            , new InputDTO { BpcUid = 97, WinUid = 1}
+                            , new InputDTO { BpcUid = 170, WinUid = 1}
+                            , new InputDTO { BpcUid = 173, WinUid = 2} };
 
 
         static ILog log = null;
@@ -62,23 +64,30 @@ namespace DeciveSimulate
 
             ReceiveC2dAsync();
 
-            while (true)
+            sentCount = 0;
+
+            for (int i = 0; i < 100; i++)
             {
                 SendDeviceToCloudMessagesAsync(GenerateRandomData());
-                Task.Delay(1000).Wait();
+                //Task.Delay(1000).Wait();
 
                 Console.ReadLine();
             }
+
+
+            Console.ReadLine();
         }
 
         private static InputDTO GenerateRandomData()
         {
             Random rand = new Random();
 
+            int which = rand.Next(0, 9);
+
             InputDTO inputDTO = new InputDTO
             {
-                BpcUid = testDataDic[rand.Next(0,9)].BpcUid,
-                WinUid = testDataDic[rand.Next(0, 9)].WinUid,
+                BpcUid = testDataDic[which].BpcUid,
+                WinUid = testDataDic[which].WinUid,
                 TimeStamp = DateTime.Now.ToUniversalTime(),
                 Ch01 = Convert.ToSingle(rand.NextDouble() * 4),
                 Ch02 = Convert.ToSingle(rand.NextDouble() * 4),
@@ -131,11 +140,18 @@ namespace DeciveSimulate
 
             //var messageString = "{'bpc':" + bpc + ",'win':" + win + ",'time':" + DateTime.Now.ToUniversalTime() + ",'data':[6435,3310,56.06875,60.325,3300,6288,-12161,6204,3293,55.01875,59.2125,3300,6257,1805,106,1901]}";
 
+            //hardcode test
+            inputDTO.BpcUid = 36;
+            inputDTO.WinUid = 1;
+            inputDTO.Ch01 = Convert.ToSingle(0.05);
+            inputDTO.Ch02 = Convert.ToSingle(0.05);
+
+
             var messageString = JsonConvert.SerializeObject(inputDTO);
             var messageSend = new Message(Encoding.ASCII.GetBytes(messageString));
 
             await deviceClient.SendEventAsync(messageSend);
-            Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, messageString);
+            Console.WriteLine("#{0} - {1} > Sending message: {2}", sentCount++, DateTime.Now, messageString);
             
                
         }

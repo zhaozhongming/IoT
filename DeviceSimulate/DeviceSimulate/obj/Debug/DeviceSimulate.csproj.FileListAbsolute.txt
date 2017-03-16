@@ -1,8 +1,7 @@
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DeciveSimulate.exe.config
-I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\obj\Debug\DeciveSimulate.exe
-I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\obj\Debug\DeciveSimulate.pdb
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DeciveSimulate.exe
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DeciveSimulate.pdb
+I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\Common.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DotNetty.Buffers.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DotNetty.Codecs.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DotNetty.Codecs.Mqtt.dll
@@ -29,6 +28,7 @@ I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\PInvoke.Windows.Core
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\System.Net.Http.Formatting.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\System.Spatial.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\Validation.dll
+I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\Common.pdb
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DotNetty.Buffers.xml
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DotNetty.Codecs.xml
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\DotNetty.Codecs.Mqtt.xml
@@ -90,5 +90,5 @@ I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\ru\System.Spatial.re
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\zh-Hans\System.Spatial.resources.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\zh-Hant\System.Spatial.resources.dll
 I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\obj\Debug\DeviceSimulate.csprojResolveAssemblyReference.cache
-I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\Common.dll
-I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\bin\Debug\Common.pdb
+I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\obj\Debug\DeciveSimulate.exe
+I:\GitHub\Repos\IoT\DeviceSimulate\DeviceSimulate\obj\Debug\DeciveSimulate.pdb
