@@ -71,7 +71,7 @@ namespace DeciveSimulate
                 SendDeviceToCloudMessagesAsync(GenerateRandomData());
                 //Task.Delay(1000).Wait();
 
-                Console.ReadLine();
+                //Console.ReadLine();
             }
 
 
